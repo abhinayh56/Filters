@@ -57,13 +57,13 @@ void MA<T>::reset()
 template <typename T>
 void MA<T>::set_fc(T fc_)
 {
-	set_param(T fc_, T dt);
+	set_param(fc_, dt);
 }
 
 template <typename T>
 void MA<T>::set_dt(T dt_)
 {
-	set_param(T fc, T dt_);
+	set_param(fc, dt_);
 }
 
 template <typename T>

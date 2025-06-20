@@ -2,7 +2,7 @@
 #define FILTER_MA_1
 
 #include <stdint.h>
-#include "../Constants/Constants.h"
+#include "../../../../Constants/src/Constants.h"
 
 template <typename T>
 class MA
@@ -28,6 +28,8 @@ class MA
 		T fc = 0.0;
         T n = 0.0;
 		T dt = 0.0;
+		T tau = 0.0;
+		T alpha = 0.0;
 
 		T* x_arr;
         bool start = true;
