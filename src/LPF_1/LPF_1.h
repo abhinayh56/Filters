@@ -4,13 +4,6 @@
 #include "../../../Constants/src/Constants.h"
 
 template <typename T>
-struct Param_LPF_1
-{
-	T fc = 0;
-	T dt = 0;
-};
-
-template <typename T>
 class LPF_1
 {
 public:
