@@ -11,8 +11,8 @@ int main()
     HPF_2<double> obj_HPF_2;
     BPF_2<double> obj_BPF_2;
     BSF_2<double> obj_BSF_2;
-    MA<double>    obj_MA;
-    SRL<double>   obj_SRL;
+    MA<double> obj_MA;
+    SRL<double> obj_SRL;
 
     std::cout << "jjjjjjjjjjjjjjjjj\n";
 
