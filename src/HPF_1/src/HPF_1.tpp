@@ -19,7 +19,7 @@ void HPF_1<T>::set_param(T fc_, T dt_)
 	fc = fc_;
 	dt = dt_;
 
-	tau = 1.0 / (2.0*MATH_PI*fc);
+	tau = 1.0 / (2.0 * MATH_PI * fc);
 	alpha = tau / (dt + tau);
 }
 
@@ -27,14 +27,15 @@ template <typename T>
 T HPF_1<T>::update(T x_k)
 {
 	T y_k = 0.0;
-	
-	if(start==true)
-{
+
+	if (start == true)
+	{
 		start = false;
 		y_k = x_k;
 	}
-	else{
-		y_k = alpha*(y_k_1 + x_k - x_k_1);
+	else
+	{
+		y_k = alpha * (y_k_1 + x_k - x_k_1);
 	}
 	x_k_1 = x_k;
 	y_k_1 = y_k;
@@ -60,7 +61,7 @@ template <typename T>
 void HPF_1<T>::set_tau(T tau_)
 {
 	tau = tau_;
-	fc = 1.0 / (2.0*MATH_PI*tau);
+	fc = 1.0 / (2.0 * MATH_PI * tau);
 	alpha = tau / (dt + tau);
 }
 
@@ -74,8 +75,8 @@ template <typename T>
 void HPF_1<T>::set_alpha(T alpha_)
 {
 	alpha = alpha_;
-	tau = (alpha/(1.0 - alpha)) * dt;
-	fc = 1.0 / (2.0*MATH_PI*tau);
+	tau = (alpha / (1.0 - alpha)) * dt;
+	fc = 1.0 / (2.0 * MATH_PI * tau);
 }
 
 template <typename T>

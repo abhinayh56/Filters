@@ -27,27 +27,29 @@ template <typename T>
 T SRL<T>::update(T x_k)
 {
     T y_k = 0.0;
-    if(start==true)
-{
+    if (start == true)
+    {
         start = false;
         y_k = x_k;
     }
-    else{
-        if(x_k > (y_k_1 + dx_dt_max*dt))
-{
-            y_k = y_k_1 + dx_dt_max*dt;
+    else
+    {
+        if (x_k > (y_k_1 + dx_dt_max * dt))
+        {
+            y_k = y_k_1 + dx_dt_max * dt;
         }
-        else if(x_k < (y_k_1 + dx_dt_min*dt))
-{
-            y_k = y_k_1 + dx_dt_min*dt;
+        else if (x_k < (y_k_1 + dx_dt_min * dt))
+        {
+            y_k = y_k_1 + dx_dt_min * dt;
         }
-        else{
+        else
+        {
             y_k = x_k;
         }
     }
-    
+
     y_k_1 = y_k;
-    
+
     return y_k;
 }
 

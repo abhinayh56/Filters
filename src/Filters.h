@@ -8,7 +8,6 @@
 #include "BPF_2\src\BPF_2.h"
 #include "BSF_2\src\BSF_2.h"
 #include "MA\src\MA.h"
-#include "Median\src\Median.h"
 #include "SRL\src\SRL.h"
 
 #endif
