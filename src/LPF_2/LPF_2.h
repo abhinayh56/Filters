@@ -1,28 +1,27 @@
-#ifndef FILTER_BSF_2_H
-#define FILTER_BSF_2_H
+#ifndef FILTER_LPF_2_H
+#define FILTER_LPF_2_H
 
 #include <stdint.h>
-#include "../../../../Constants/src/Constants.h"
+#include "../../../Constants/src/Constants.h"
 
 template <typename T>
-class BSF_2
+class LPF_2
 {
 public:
-   BSF_2();
-   void init(T f0_, T dt_);
-   void set_param(T f0_, T dt_);
+   LPF_2();
+   void init(T fc_, T dt_);
+   void set_param(T fc_, T dt_);
    T update(T x_k);
    void reset();
 
-   void set_f0(T f0_);
+   void set_fc(T fc_);
    void set_dt(T dt_);
-   T get_f0();
+   T get_fc();
    T get_dt();
    T get_fs();
 
 private:
-   T f0 = 0.0;
-   T B = 0.0;
+   T fc = 0.0;
    T dt = 0.0;
 
    T lambda_1 = 0.0;
@@ -40,6 +39,6 @@ private:
    uint8_t start_counter = 0;
 };
 
-#include "BSF_2.tpp"
+#include "LPF_2.tpp"
 
 #endif

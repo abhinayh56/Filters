@@ -1,20 +1,13 @@
-#ifndef FILTER_LPF_1
-#define FILTER_LPF_1
+#ifndef FILTER_HPF_1
+#define FILTER_HPF_1
 
-#include "../../../../Constants/src/Constants.h"
-
-template <typename T>
-struct Param_LPF_1
-{
-	T fc = 0;
-	T dt = 0;
-};
+#include "../../../Constants/src/Constants.h"
 
 template <typename T>
-class LPF_1
+class HPF_1
 {
 public:
-	LPF_1();
+	HPF_1();
 	void init(T fc_, T dt_);
 	void set_param(T fc_, T dt_);
 	T update(T x_k);
@@ -36,10 +29,11 @@ private:
 	T dt = 0.0;
 	T alpha = 0.0;
 
+	T x_k_1 = 0.0;
 	T y_k_1 = 0.0;
 	bool start = true;
 };
 
-#include "LPF_1.tpp"
+#include "HPF_1.tpp"
 
 #endif

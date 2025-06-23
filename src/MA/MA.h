@@ -2,7 +2,7 @@
 #define FILTER_MA_1
 
 #include <stdint.h>
-#include "../../../../Constants/src/Constants.h"
+#include "../../../Constants/src/Constants.h"
 
 template <typename T>
 class MA
