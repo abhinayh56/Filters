@@ -32,20 +32,18 @@ void MA<T>::set_x_arr(T *x_arr_, uint16_t len_arr_)
 template <typename T>
 T MA<T>::update(T x_k)
 {
-	T y_k = 0.0;
+	T sum = 0.0;
+
 	for (uint16_t i = 0; i < n - 1; i++)
 	{
 		x_arr[i] = x_arr[i + 1];
+		sum += x_arr[i];
 	}
-	x_arr[n - 1] = x_k;
 
-	T sum = 0.0;
-	for (uint16_t i = 0; i < n; i++)
-	{
-		sum = sum + x_arr[i];
-	}
-	y_k = sum / n;
-	return y_k;
+	x_arr[n - 1] = x_k;
+	sum += x_arr[n - 1];
+
+	return sum / n;
 }
 
 template <typename T>
